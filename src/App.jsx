@@ -15,7 +15,7 @@ function App() {
       <NavBar/>
       <Routes>
       <Route path={'/'} element ={<ItemListContainer/>}/>
-      <Route path={'/categoria/:id'} element ={<ItemListContainer/>}/>
+      <Route path={'/category/:id'} element ={<ItemListContainer/>}/>
       <Route path={'/item/:itemId'} element ={<ItemDetailContainer/>}/>
       <Route path={'*'}element ={<Error404/>}/>
       </Routes>

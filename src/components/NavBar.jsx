@@ -3,22 +3,25 @@ import { NavLink,Link } from "react-router-dom";
 
 const NavBar =()=>{
     return(
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary dark">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">NORDIC</a>
+    <NavLink className="navbar-brand" to="#">NORDIC</NavLink>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+          <NavLink className="nav-link"  to="{/categoria/silla}">Sillas</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Catálogo</a>
+          < NavLink className="nav-link" to="{/categoria/mesa}">Mesas</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Contacto</a>
+          <NavLink className="nav-link" to="{/categoria/lampara}">Lámparas</NavLink>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" to=""><CartWidget/> </a>
         </li>
       </ul>
     </div>
