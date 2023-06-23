@@ -7,10 +7,10 @@ const Footer =() =>{
     return (
         <div className='container-fluid py-5'>
            < div className ="d-flex align-items-end">
-
-           <div class="p-2"> <img src={facebook} alt="" />  </div>
-            <div class="p-2"> <img src={whatsapp} alt="" /></div>
-            <div class="p-2"> <img src={instagram} alt="" /> </div>
+           <p>Nordic</p> 
+           <div className="p-2"> <img src={facebook} alt="" />  </div>
+            <div className="p-2"> <img src={whatsapp} alt="" /></div>
+            <div className="p-2"> <img src={instagram} alt="" /> </div>
 
             </div>
 

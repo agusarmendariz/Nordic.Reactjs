@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect,useState } from "react";
 
-const ItemCount =({stock,initial,onAdd})=>{
-    const [quantity,setQuantity]=useState(initial)
-     const increment =()=>{
+const ItemCount =({stock})=>{
+    const [quantity,setQuantity]=useState(1)
+    const [quantityStock, setQuantityStock]= useState(stock);
+    
+    
+    const increment =()=>{
 
         if(quantity < stock){
             setQuantity(quantity+1)
@@ -14,7 +17,17 @@ const ItemCount =({stock,initial,onAdd})=>{
         }
      }
     
-
+     const onAdd= ()=>{
+        if (quantity <= stock){
+            setQuantity(quantity -stock);
+            setQuantity(1);
+            console.log("Seleccionaste: " + items + "")
+        }
+     }
+      useEffect(()=>{
+        setQuantityStock(stock);
+      },[stock]);
+    
 
   return(
     <div className="container">
