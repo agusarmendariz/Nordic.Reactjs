@@ -1,28 +1,35 @@
-import ItemCount from './ItemCount'
+import { useEffect,useState } from 'react';
+import ItemCount from './ItemCount';
+import { CartContext } from './CartContext';
 
-const ItemDetail =({nombre,img,precio,descripcion,stock})=>{
+const ItemDetail =({producto})=>{
+    const {addItem} = useContext(CartContext);
+    const [item,setItem]= useState({});
+
+    const onAdd = (quantity) => {
+        console.log("Cantidad: " + quantity);
+        addItem(item, quantity);
+    }
+
+    useEffect(()=>{
+        setItem(producto);
+    }, [producto]);
 
     return(
-        <div className='container'>
-            <div className='row'>
-                <div className='col-md-3'>
-                    <div className='card d-flex' style={{width:"18rem"}}>
-                        <img src={img} alt="" />
-                    </div>
-                    <h5 class="card-title">{nombre}</h5>
-                   <p> Categoría: {descripcion}</p> 
-                   <p>Precio:$ {precio}</p>
-                  <p>Cantidad en stock: {stock}</p>
-                  
+        <div className="container my-5">
+            <div className="row">
+                <div className="col-md-5 offset-md-1">
+                    <img src={item.imagen} alt={item.nombre} className="img-fluid" />
                 </div>
-                <div>
-              
-                <ItemCount  initial={1} stock={10} onAdd={(quantity) => console.log('Cantidad agregada',quantity)}/>
-               
+                <div className="col-md-5">
+                    <h1>{item.nombre}</h1>
+                    <h3>{item.descripcion}</h3>
+                    <p><b>${item.precio}</b></p>
+                    <ItemCount stock={item.stock} onAdd={onAdd} />
                 </div>
             </div>
-
         </div>
+        
     )
 }
 

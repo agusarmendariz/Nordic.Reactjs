@@ -1,6 +1,6 @@
-import facebook from '../images/facebook.png'
-import whatsapp from '../images/whatsapp.png'
-import instagram from '../images/instagram.png'
+import facebook from './images/instagram.png'
+import whatsapp from './images/whatsapp.png'
+import instagram from './images/facebook.png'
 
 const Footer =() =>{
 

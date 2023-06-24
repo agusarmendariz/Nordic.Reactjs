@@ -1,31 +1,35 @@
 import { useEffect,useState } from "react";
+import {Link} from "react-router-dom"
 
-const ItemCount =({stock})=>{
-    const [quantity,setQuantity]=useState(1)
-    const [quantityStock, setQuantityStock]= useState(stock);
+const ItemCount =({stock, onAdd})=>{
+    const [items, setItems] = useState(1);
+    const [itemStock, setItemStock] = useState(stock);
+    const [itemAdded, setItemAdded] = useState(false);
     
     
     const increment =()=>{
 
-        if(quantity < stock){
-            setQuantity(quantity+1)
+        if (items < itemStock) {
+            setItems(items + 1);
         }
      }
      const decrement = ()=>{
-        if(quantity > 1){
-            setQuantity(quantity -1)
+        if (items > 1) {
+            setItems(items - 1);
         }
      }
     
-     const onAdd= ()=>{
-        if (quantity <= stock){
-            setQuantity(quantity -stock);
-            setQuantity(1);
-            console.log("Seleccionaste: " + items + "")
+     const addToCart= ()=>{
+        if (items <= itemStock) {
+            setItemStock(itemStock - items);
+            setItems(1);
+            setItemAdded(true);
+            onAdd(items);
+            console.log("Seleccionaste: " + items + " Productos al Carrito!\nTe quedan: " + itemStock + " Productos disponibles!");;
         }
      }
       useEffect(()=>{
-        setQuantityStock(stock);
+        setItemStock(stock);
       },[stock]);
     
 
@@ -36,16 +40,16 @@ const ItemCount =({stock})=>{
                
                 <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                 <button type="button" class="btn btn-outline-primary" onClick={decrement}>-</button>
-                <button type="button" class="btn btn-outline-primary">{quantity}</button>
+                <button type="button" class="btn btn-outline-primary">{items}</button>
                 <button type="button" class="btn btn-outline-primary" onClick={increment}>+</button>
               </div>
             </div>
             </div>   
             <div className="row">
                 <div className="col">
-                <button type="button" class="btn btn-outline-dark"onClick={()=> onAdd(quantity)} disabled ={!stock}>Agregar</button>
-                </div>
+                {itemAdded ? <Link to={"/cart"} className="btn btn-light">Finalizar Compra</Link> : <button type="button" className="btn btn-light" onClick={addToCart}>Agregar al Carrito</button>}
                 </div> 
+</div>
 </div>
     )
 }
