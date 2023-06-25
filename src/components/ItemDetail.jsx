@@ -21,8 +21,8 @@ const ItemDetail =({product})=>{
             <div className="card"style={{ width: '24rem' }}>
             <img src={item.imagen} className="card-img-detail" alt="..."/>
             <div className="card-body text-center">
-                <h1>{product.nombre}</h1>
-                    <h3>{item.descripcion}</h3>
+                <h1>{item.nombre}</h1>
+                    <h5>{item.descripcion}</h5>
                     <p><b>${item.precio}</b></p>
                     <ItemCount stock={item.stock} onAdd={onAdd} />
                      </div>
