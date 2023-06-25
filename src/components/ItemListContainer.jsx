@@ -1,6 +1,6 @@
 import{useState, useEffect} from 'react';
 import{useParams} from 'react-router-dom'
-import ItemCount from "./ItemCount";
+// import ItemCount from "./ItemCount";
 import ItemList from './ItemList';
 import Loading from "./Loading";
 import {getDocs,collection, getFirestore, query, where, } from "firebase/firestore";
@@ -21,7 +21,7 @@ const ItemListContainer =() =>{
                     setItems(resultado.docs.map(producto => ({id:producto.id, ...producto.data()})));
                     setLoading(false);
                 } else {
-                    console.error("Error! No se encontraron productos en la colección!");
+                    console.error("Ese producto no se encuentra!");
                 }
             });
         }, [id]);

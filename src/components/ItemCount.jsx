@@ -36,7 +36,7 @@ const ItemCount =({stock, onAdd})=>{
   return(
     <div className="container">
         <div className="row">
-            <div className="col">
+            <div className="col-sm-12 p-2">
                
                 <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                 <button type="button" class="btn btn-outline-primary" onClick={decrement}>-</button>
@@ -47,7 +47,7 @@ const ItemCount =({stock, onAdd})=>{
             </div>   
             <div className="row">
                 <div className="col">
-                {itemAdded ? <Link to={"/cart"} className="btn btn-light">Finalizar Compra</Link> : <button type="button" className="btn btn-light" onClick={addToCart}>Agregar al Carrito</button>}
+                {itemAdded ? <Link to={"/cart"} className="btn btn-light">Finalizar Compra</Link> : <button type="button" className="btn btn-outline-dark" onClick={addToCart}>Agregar al Carrito</button>}
                 </div> 
 </div>
 </div>
