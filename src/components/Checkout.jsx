@@ -8,7 +8,7 @@ const Checkout = () => {
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
     const [orderId, setOrderId] = useState("");
-    const {cart, totalCart} = useContext(CartContext);
+    const {cart,clear, totalCart} = useContext(CartContext);
 
     const generarOrden = () => {
         if (nombre.length === 0) {
@@ -34,6 +34,7 @@ const Checkout = () => {
         const OrdersCollection = collection(db, "orders");
         addDoc(OrdersCollection, order).then(resultado => {
             setOrderId(resultado.id);
+            clear();
         })
         .catch(resultado => {
             console.log("Error! No se pudo completar la compra!");
@@ -63,7 +64,7 @@ const Checkout = () => {
                             <label className="form-label">Teléfono</label>
                             <input type="text" className="form-control" onInput={(e) => {setTelefono(e.target.value)}} />
                         </div>
-                        <button type="button" className="btn btn-light" onClick={generarOrden}>Generar Orden</button>
+                        <button type="button" className="btn btn-outline-warning" onClick={generarOrden}>Generar Orden</button>
                     </form>
                 </div>
                 <div className="col-md-5">
@@ -89,13 +90,11 @@ const Checkout = () => {
             </div>
             <div className="row my-5">
                 <div className="col text-center">
-                    {orderId ? <div className="alert alert-warning" role="alert">
-                        <h1 className="fs-1 text">Gracias por tu Compra!</h1>
-                        <p>Tu Orden de Compra es: <b>{orderId}</b></p>
-                    </div> : ""}
+                    {orderId ? <Navigate to={"/orderBuy/" + orderId} /> : ""}
                 </div>
             </div>
-        </div>
+                </div>
+          
     )
 }
 

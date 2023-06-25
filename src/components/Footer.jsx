@@ -16,7 +16,7 @@ const Footer =() =>{
     <a class="nav-link" href="#">Contacto</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Locales</a>
+    <a class="nav-link" href="#">Preguntas</a>
   </li>
 
   < div className ="d-flex align-items-end">

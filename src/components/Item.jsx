@@ -7,14 +7,14 @@ const Item = ({product}) =>{
         <div className="card border border-0 " >
         <Link to={`/item/${product.id}`} className="text-dark text-decoration-none"> 
           <img src={product.imagen} className="card-img-top" alt="..."/>
-  <div className="card-body text-center">
-    <h5>{product.nombre}</h5>
-    <p >Precio: ${product.precio}</p>
-    <p >Cantidad disponible: {product.stock}</p>
-  </div>
-  </Link> 
- </div> 
-</div>
+           <div className="card-body text-center">
+          <h5>{product.nombre}</h5>
+            <p >Precio: ${product.precio}</p>
+             <p >Cantidad disponible: {product.stock}</p>
+          </div>
+     </Link> 
+      </div> 
+    </div>
 </>
      )
 
