@@ -1,5 +1,4 @@
 import CartWidget from "./CartWidget";
-import search from "./images/search.png"
 import { NavLink} from "react-router-dom";
 
 
@@ -11,11 +10,6 @@ const NavBar =()=>{
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
-{/*  
-    <form className="d-flex justify-content-center" role="search">
-        <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
-        <button className="btn btn-light" type="submit"><img src={search} alt="searching" width={24} /></button>
-      </form> */}
    
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">

@@ -1,6 +1,6 @@
 import {useContext, useState } from "react";
 import { CartContext } from "./CartContext";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import {addDoc, collection, getFirestore } from "firebase/firestore";
 import { Navigate } from "react-router-dom";
 
 const Checkout = () => {
@@ -24,7 +24,7 @@ const Checkout = () => {
         }
 
         const buyer = {name:nombre, phone:telefono, email:email}
-        const items = cart.map(item => ({id:item.id, title:item.titulo, price:item.precio}));
+        const items = cart.map(item => ({id:item.id, name:item.nombre, price:item.precio, quantity:item.cantidad}));
         const fecha = new Date();
         const date = `${fecha.getFullYear()}-${fecha.getMonth()+1}-${fecha.getDate()} ${fecha.getHours()}:${fecha.getMinutes()}`;
         const total = totalCart();
@@ -37,11 +37,8 @@ const Checkout = () => {
             clear();
         })
         .catch(resultado => {
-            console.log("Error! No se pudo completar la compra!");
+            console.error("Error! No se pudo completar la compra!");
         });
-
-
-
 
     }
 
@@ -73,8 +70,8 @@ const Checkout = () => {
                             {
                                 cart.map(item => (
                                     <tr key={item.id}>
-                                        <td><img src={item.imagen} alt={item.titulo} width={80} /></td>
-                                        <td className="align-middle">{item.titulo}</td>
+                                        <td><img src={item.imagen} alt={item.nombre} width={80} /></td>
+                                        <td className="align-middle">{item.nombre}</td>
                                         <td className="align-middle">{item.cantidad} x ${item.precio}</td>
                                         <td className="align-middle text-center">${item.cantidad * item.precio}</td>
                                     </tr>

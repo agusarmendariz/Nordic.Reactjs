@@ -1,30 +1,36 @@
 import{useState, useEffect} from 'react';
 import{useParams} from 'react-router-dom'
-// import ItemCount from "./ItemCount";
 import ItemList from './ItemList';
 import Loading from "./Loading";
 import {getDocs,collection, getFirestore, query, where, } from "firebase/firestore";
 
 
-const ItemListContainer =() =>{
-     const [items,setItems]= useState ([]);
-     const [loading, setLoading] = useState(true);
-     const {id}= useParams()
-
-
-        useEffect(() => {
-            const db = getFirestore();
-            const itemsCollection = collection(db, "items");
-            const q = id ? query(itemsCollection, where("categoryId", "==", id)) : itemsCollection;
-            getDocs(q).then(resultado => {
-                if (resultado.size > 0) {
-                    setItems(resultado.docs.map(producto => ({id:producto.id, ...producto.data()})));
-                    setLoading(false);
-                } else {
-                    console.error("Ese producto no se encuentra!");
-                }
-            });
-        }, [id]);
+const ItemListContainer = () => {
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const { id } = useParams();
+  
+    useEffect(() => {
+      const db = getFirestore();
+      const itemsCollection = collection(db, "items");
+      const getData = async () => {
+        const q = !id ? itemsCollection : query(collection(db, "items"), where("category", "==", id));
+  
+        const querySnapshot = await getDocs(q);
+        const productos = querySnapshot.docs.map((doc) => {
+          const newProduct = {
+            ...doc.data(),
+            id: doc.id,
+          };
+          return newProduct;
+        });
+        setTimeout(() => {
+          setItems(productos);
+          setLoading(false);
+        }, 1000);
+      };
+      getData();
+    }, [id]);
         
 
     return (
