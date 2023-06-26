@@ -14,8 +14,7 @@ const ItemListContainer = () => {
       const db = getFirestore();
       const itemsCollection = collection(db, "items");
       const getData = async () => {
-        const q = !id ? itemsCollection : query(collection(db, "items"), where("category", "==", id));
-  
+        const q = !id ? itemsCollection : query(collection(db, "items"), where("categoria", "==", id));
         const querySnapshot = await getDocs(q);
         const productos = querySnapshot.docs.map((doc) => {
           const newProduct = {

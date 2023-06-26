@@ -5,8 +5,8 @@ import instagram from './images/facebook.png'
 const Footer =() =>{
 
     return (
-
-           <ul class="nav justify-content-center bg-dark pt-5">
+ <div className="fixed-bottom">
+           <ul class="nav justify-content-center bg-dark pt-3">
   <li class="nav-item">
     <a class="nav-link" href="#">Nordic</a>
   </li>
@@ -28,7 +28,7 @@ const Footer =() =>{
 
    </ul>
 
-
+</div>
       
     )
 }

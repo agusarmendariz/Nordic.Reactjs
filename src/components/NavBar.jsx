@@ -14,13 +14,13 @@ const NavBar =()=>{
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <NavLink className="nav-link"  to="{/categoria/sillas}">Sillas</NavLink>
+          <NavLink className="nav-link"  to="/categoria/sillas">Sillas</NavLink>
         </li>
         <li className="nav-item">
-          < NavLink className="nav-link" to="{/categoria/mesas}">Mesas</NavLink>
+          < NavLink className="nav-link" to="/categoria/mesas">Mesas</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="{/categoria/lamparas}">Lámparas</NavLink>
+          <NavLink className="nav-link" to="/categoria/lamparas">Lámparas</NavLink>
         </li>
         <li className="nav-item">
           <a className="nav-link" to=""><CartWidget/> </a>
