@@ -1,5 +1,5 @@
 import facebook from './images/instagram.png'
-import whatsapp from './images/Whatsapp.png'
+import whatsapp from './images/whatsapp.png'
 import instagram from './images/facebook.png'
 
 const Footer =() =>{
