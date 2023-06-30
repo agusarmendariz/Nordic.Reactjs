@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { initializeApp } from "firebase/app";
+import reportWebVitals from './reportWebVitals'
 import App from './App';
 
 
@@ -34,4 +35,4 @@ root.render(
 
 );
 
-
+reportWebVitals(console.log);
