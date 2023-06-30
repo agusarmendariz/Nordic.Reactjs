@@ -6,15 +6,15 @@ const Footer =() =>{
 
     return (
  <div className="fixed-bottom">
-           <ul class="nav justify-content-center bg-dark pt-3">
-  <li class="nav-item">
-    <a class="nav-link" href="#">Nordic</a>
+           <ul className="nav justify-content-center bg-dark pt-3">
+  <li className="nav-item">
+    <a className="nav-link" href="#">Nordic</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Contacto</a>
+  <li className="nav-item">
+    <a className="nav-link" href="#">Contacto</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Preguntas</a>
+  <li className="nav-item">
+    <a className="nav-link" href="#">Preguntas</a>
   </li>
 
   < div className ="d-flex align-items-end">
