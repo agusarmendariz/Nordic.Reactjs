@@ -5,6 +5,8 @@ Ecommerce sobre muebles para el hogar con un estilo nordico.
 ### Tecnologías utilizadas
 React js | Bootstrap | Firebase | Vercel 
 
+https://nordic-beta.vercel.app/
+
 
 
 
