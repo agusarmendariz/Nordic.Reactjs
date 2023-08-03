@@ -1,19 +1,11 @@
-# Script utilizado`npm start`
+# NORDIC
+Script utilizado`npm start`. Branch actualizada prod
+## Sobre el proyecto
+Ecommerce sobre muebles para el hogar con un estilo nordico.
+### Tecnologías utilizadas
+React js | Bootstrap | Firebase | Vercel 
 
-Correr la app en la branch development
-
-Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
-
-## Acerca del proyecto
-
- Este proyecto es sobre muebles para el hogar, basado en un estilo moderno nordico. En cual se pueden elegir distintas categorias de sillas, mesas y lamparas.
-
-### Librerias, imagenes, icons, font
- 
- Utilicé bootstrap como framework para darle estilo al proyecto.
- Las imagenes fueron obtenidas de unsplash.
- Los iconos de icon-icons.
- Descargué de google-font la fuente "Jost".
+https://nordic-beta.vercel.app/
 
 
  
